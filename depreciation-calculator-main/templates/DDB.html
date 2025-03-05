@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+<html lang="en">
+<head>
+  <title>{{tit}} </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  {% block ddbStyle %}
+  <style>
+    #demo, #two, #three  {
+      font-weight: bold;
+    }
+
+    /*#a, #b, #c, #d{
+	visibility:hidden;   
+    }*/
+
+    #cst, #lif, #sal {
+    display: inline;
+    }
+
+   .container  {
+      background-color: #B0B0A9
+    }
+
+  </style>
+</head>
+<body>
+{% endblock %}
+{% block ddb %}
+<div class="jumbotron text-center">
+  <h1 id= "typ">{{tit}}</h1>
+   
+</div>
+  
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Enter Asset Cost</h3>     
+      <button onclick="FunctionOne()">Press</button>
+      <p id= "cst"></p>
+	  <span id="einz"></span>
+    </div>
+    <div class="col-sm-4">
+      <h3>Useful Life</h3>
+      <button onclick="FunctionTwo()">Press</button>
+	  <p id= "lif"></p>
+	  <span id="swie"></span>
+    </div>
+    <div class="col-sm-4">
+      <h3>Enter Salvage Value</h3>        
+      <button onclick="FunctionThree()">Press</button>
+	  <p id= "sal"></p>
+	  <span id="drei"></span>
+    </div>
+  </div>
+  <div class="row">
+  <form method="POST" action= "/A">
+  {% csrf_token %}
+   <div class="col-sm-4">
+	<input  type= "hidden" name= "cst" id="a">
+	<input  type= "hidden" name= "lif" id="b">
+	<input  type= "hidden" name= "sal" id="c">
+	<input  type= "hidden" name= "typ" id="d">
+	<br>
+      <button>Submit Values</button>  
+  </div>
+</form>
+  <br>
+      
+  </div>
+  
+</div>
+<script>
+  function FunctionOne() {
+    var balance = prompt("Please enter asset cost");
+    if (balance != null) {
+      var t = document.getElementById("typ").innerHTML
+      document.getElementById("cst").innerHTML = 
+      "Asset cost: "
+      var x = document.getElementById("a")
+      x.value = + balance;	  
+	  var d = document.getElementById("einz")
+	  d.innerHTML = + balance;
+	  var u = document.getElementById("d")
+      u.value = t;
+	  
+    }
+  }
+
+  function FunctionTwo() {
+    var years = prompt("Please enter useful life in years");
+    if (years != null) {
+      document.getElementById("lif").innerHTML = 
+      "Useful life: "
+      var y = document.getElementById("b");
+      y.value = + years;
+	  var e = document.getElementById("swie");
+	  e.innerHTML = + years;
+      
+    }
+    
+  }
+
+  function FunctionThree() {
+    var salvage = prompt("Please enter salvage value");
+    if (salvage != null) {
+      document.getElementById("sal").innerHTML = 
+      "Salvage value : "
+      var z = document.getElementById("c");
+      z.value = + salvage;
+	  var f = document.getElementById("drei");
+	  f.innerHTML = + salvage;
+    }
+  }
+
+  </script>
+  {% endblock %}
+</body>
+</html>

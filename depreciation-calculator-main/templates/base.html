@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+  <title>Depreciation Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="manifest" href="../static/manifest.json">
+  <!-- Android -->
+<link rel="shortcut icon" sizes="192x192" href="../static/icon-192x192.png">
+<link rel="shortcut icon" href="../static/icon-180x180.ico" />
+<link rel="apple-touch-icon" href="../static/icon-180x180.png" />
+<link rel="shortcut icon" href= "https://console.cloud.google.com/storage/browser/_details/gopig/icon-196x196.png?project=optimal-doodad-327316"> 
+<!--<link rel="shortcut icon" href= "https://storage.googleapis.com/gopig/icon-196x196.png">-->
+<!-- iOS -->
+<link rel="apple-touch-icon" href="../static/icon-120x120.png" sizes="120x120">
+<link rel="apple-touch-icon" href="../static/icon-152x152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../static/icon-180x180.png" sizes="180x180">
+
+  <style>
+    #demo, #two, #three  {
+      font-weight: bold;
+    }
+
+    #f  {
+      
+    }
+ {% block DepCalStyle %} {% endblock %}
+ {% block ddbStyle %} {% endblock %}
+ {% block OutputStyle %} {% endblock %}	
+  </style>
+<meta name="google-site-verification" content="r_tzpM2Utk0eol-ogIq9-kW-H99Bz4sJUbiVWq96VPM" />
+</head>
+<body>
+{% block ddb %} {% endblock %}
+{% block syd %} {% endblock %}
+{% block ddbOutput %} {% endblock %}
+
+<br>
+<br>
+{% include 'Footer98.html' %}
+<script>
+
+</script> 
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+  <title>Depreciation Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="https://storage.googleapis.com/gopig/icon-196x196.png">
+   
+<!-- iOS -->
+  <link rel="apple-touch-icon" href="../static/icon-120x 120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="../static/icon-152x 152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="../static/icon-180x 180.png" sizes="180x180">
+  <style>
+    {% block DepCalStyle %}
+    .press {
+      padding: 15px 64px;
+      text-align: center;
+      font-size: 16px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+     }
+
+    #one {
+      background-color: #049704;
+    }
+
+    #two {
+     background-color: #C15133;
+    }
+
+     #three {
+     background-color: #D4DA12;
+    }
+
+    .container  {
+      background-color: #B0B0A9;
+    }
+    {% endblock %}
+  </style>
+</head>
+<body>
+{% block syd %}
+<div class="jumbotron text-center">
+  <h1>Depreciation Calculator</h1>
+  <p>Select One Among The Following</p> 
+</div>  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Double Declining Balance</h3>
+      <form method="POST" action= "/Z">
+      {% csrf_token %}
+      <input type="submit" class= "press" id= "one" value= "Press">
+     </form>
+      <br>
+    </div>
+    <div class="col-sm-4">
+      <h3>Sum of the Years Digits</h3>
+      <form method="POST" action= "/X">
+      {% csrf_token %}
+      <input type="submit" class= "press" id= "two" value= "Press">
+     </form>
+      <br>
+    </div>
+    <div class="col-sm-4">
+      <h3>Straight Line</h3>
+      <form method="POST" action= "/Y">
+      {% csrf_token %}
+      <input type="submit" class= "press" id= "three" value= "Press">
+     </form>       
+      <br>
+      <br>
+    </div>
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>
