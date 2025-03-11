@@ -80,19 +80,23 @@
 </div>
 <script>
   function FunctionOne() {
-    var balance = prompt("Please enter asset cost");
-    if (balance != null) {
+    var balance = prompt("Please enter asset cost (In whole dollars)"); 
+    if (isNaN(balance)) { 
+         window.alert("Please Enter A Value. No Dollar Signs or Commas. Whole Integers Only") 
+         return 
+      } 
+    else {
       var t = document.getElementById("typ").innerHTML
       document.getElementById("cst").innerHTML = 
       "Asset cost: "
       var x = document.getElementById("a")
       x.value = + balance;	  
-	  var d = document.getElementById("einz")
-	  d.innerHTML = + balance;
-	  var u = document.getElementById("d")
-      u.value = t;
-	  
+	    var d = document.getElementById("einz")
+	    d.innerHTML = + balance;
+	    var u = document.getElementById("d")
+      u.value = t;	  
     }
+
   }
 
   function FunctionTwo() {
