@@ -80,8 +80,9 @@
 </div>
 <script>
   function FunctionOne() {
-    var balance = prompt("Please enter asset cost (In whole dollars)"); 
-    if (isNaN(balance)) { 
+    let balance = prompt("Please enter asset cost (In whole dollars)"); 
+     // window.alert(balance.Value) 
+     if (isNaN(balance)|| balance === 0 || typeof balance === "undefined"){       
          window.alert("Please Enter A Value. No Dollar Signs or Commas. Whole Integers Only") 
          return 
       } 
@@ -96,12 +97,16 @@
 	    var u = document.getElementById("d")
       u.value = t;	  
     }
-
-  }
+}
+  
 
   function FunctionTwo() {
-    var years = prompt("Please enter useful life in years");
-    if (years != null) {
+    var years = prompt("Please enter useful life in years"); 
+     if (isNaN(years)|| years == 0|| years === undefined) { 
+         window.alert("Please Enter A Value. Letters or Commas. Whole Integers Only") 
+         return
+    }
+      else {
       document.getElementById("lif").innerHTML = 
       "Useful life: "
       var y = document.getElementById("b");
@@ -115,7 +120,11 @@
 
   function FunctionThree() {
     var salvage = prompt("Please enter salvage value");
-    if (salvage != null) {
+    if (isNaN(salvage) || salvage == 0) { 
+         window.alert("Please Enter A Value. No Dollar Signs or Commas. Whole Integers Only") 
+         return
+      }  
+      else {
       document.getElementById("sal").innerHTML = 
       "Salvage value : "
       var z = document.getElementById("c");

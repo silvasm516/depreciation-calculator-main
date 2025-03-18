@@ -80,24 +80,32 @@
 </div>
 <script>
   function FunctionOne() {
-    var balance = prompt("Please enter asset cost");
-    if (balance != null) {
+    var balance = prompt("Please enter asset cost (In whole dollars)");
+     if (isNaN(balance)|| balance == 0 || balance== null) {         
+         window.alert("Please Enter A Value. No Dollar Signs or Commas. Whole Integers Only") 
+         return 
+      } 
+    else {
       var t = document.getElementById("typ").innerHTML
       document.getElementById("cst").innerHTML = 
       "Asset cost: "
       var x = document.getElementById("a")
       x.value = + balance;	  
-	  var d = document.getElementById("einz")
-	  d.innerHTML = + balance;
-	  var u = document.getElementById("d")
-      u.value = t;
-	  
+	    var d = document.getElementById("einz")
+	    d.innerHTML = + balance;
+	    var u = document.getElementById("d")
+      u.value = t;	  
     }
-  }
+}
+  
 
   function FunctionTwo() {
-    var years = prompt("Please enter useful life in years");
-    if (years != null) {
+    var years = prompt("Please enter useful life in years"); 
+     if (isNaN(years)|| years == 0 || years ==null){ 
+         window.alert("Please Enter A Balue. No Letters or Commas. Whole Integers Only") 
+         return
+    }
+      else {
       document.getElementById("lif").innerHTML = 
       "Useful life: "
       var y = document.getElementById("b");
@@ -111,7 +119,14 @@
 
   function FunctionThree() {
     var salvage = prompt("Please enter salvage value");
-    if (salvage != null) {
+    if (isNaN(salvage) || salvage == 0 ||) { 
+         window.alert("Please Enter A Valud. No Dollar Signs or Commas. Whole Integers Only") 
+         return
+      }
+    if (salvage==null)
+    {return}  
+    
+      else {
       document.getElementById("sal").innerHTML = 
       "Salvage value : "
       var z = document.getElementById("c");
