@@ -62,7 +62,7 @@
     </div>
   </div>
   <div class="row">
-  <form method="POST" action= "/A">
+  <form method="POST" action= "/A" id="h">
   {% csrf_token %}
    <div class="col-sm-4">
 	<input  type= "hidden" name= "cst" id="a">
@@ -80,18 +80,19 @@
 </div>
 <script>
   function FunctionOne() {
-    let balance = prompt("Please enter asset cost (In whole dollars)"); 
-     // window.alert(balance.Value) 
-     if (isNaN(balance)|| balance === 0 || typeof balance === "undefined"){       
+    var balance = prompt("Please enter asset cost (In whole dollars)");  
+     if (isNaN(balance)|| balance == 0|| balance === undefined|| balance === null) { 
+         window.alert(years.Value)     
          window.alert("Please Enter A Value. No Dollar Signs or Commas. Whole Integers Only") 
          return 
       } 
-    else {
+      else {
       var t = document.getElementById("typ").innerHTML
       document.getElementById("cst").innerHTML = 
       "Asset cost: "
       var x = document.getElementById("a")
-      x.value = + balance;	  
+      
+      x.value = + balance;  
 	    var d = document.getElementById("einz")
 	    d.innerHTML = + balance;
 	    var u = document.getElementById("d")
@@ -102,7 +103,7 @@
 
   function FunctionTwo() {
     var years = prompt("Please enter useful life in years"); 
-     if (isNaN(years)|| years == 0|| years === undefined) { 
+     if (isNaN(years)|| years == 0|| years === undefined || years === null){
          window.alert("Please Enter A Value. Letters or Commas. Whole Integers Only") 
          return
     }
@@ -120,7 +121,7 @@
 
   function FunctionThree() {
     var salvage = prompt("Please enter salvage value");
-    if (isNaN(salvage) || salvage == 0) { 
+    if (isNaN(salvage) || salvage == 0 || salvage ===undefined || salvage === null){ 
          window.alert("Please Enter A Value. No Dollar Signs or Commas. Whole Integers Only") 
          return
       }  
@@ -133,7 +134,6 @@
 	  f.innerHTML = + salvage;
     }
   }
-
   </script>
   {% endblock %}
 </body>
