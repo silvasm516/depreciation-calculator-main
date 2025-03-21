@@ -28,7 +28,7 @@ DEBUG = False
 #DEBUG = bool(os.environ.get("DEBUG", default=0))
 
 #ALLOWED_HOSTS = ['secure-citadel-03902.herokuapp.com, 127.0.0.1, 127.0.0.1:8000, localhost']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 127.0.0.1, 127.0.0.1:8000, localhost]
 #ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS","127.0.0.1").split(",")
 
 # Application definition
