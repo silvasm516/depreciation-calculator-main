@@ -17,9 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-urlpatterns = [
+#urlpatterns = [
     #path( '', DEPView.as_view(), name= "index"),
+   # path('admin/', admin.site.urls),
+   # path('', include('ddbapp.urls'))
+    #path('', include('pwa.urls'))
+#]
+urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ddbapp.urls'))
-    #path('', include('pwa.urls'))
+    # path('', include('pwa.urls'))
 ]
