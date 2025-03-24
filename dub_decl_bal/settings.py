@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'dub_decl_bal.wsgi.application'
+WSGI_APPLICATION = 'dub_decl_bal.wsgi.app
 
 
 # Database
