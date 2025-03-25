@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dub_decl_bal.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'depreciation-calculator-main/dub_decl_bal.settings')
 
 application = get_wsgi_application()
