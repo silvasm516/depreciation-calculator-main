@@ -29,7 +29,7 @@ SECRET_KEY = 'tr9me&+wbl$_$ltb$_o98k0@=zki713n*-%9efel@o8u-o3z2n'
 DEBUG = False
 
 #ALLOWED_HOSTS = ['secure-citadel-03902.herokuapp.com, 127.0.0.1, 127.0.0.1:8000, localhost']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', '127.0.0.1', '127.0.0.1:8000'] 
 
 # Application definition
 

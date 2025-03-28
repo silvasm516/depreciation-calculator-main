@@ -24,11 +24,11 @@ SECRET_KEY = 'tr9me&+wbl$_$ltb$_o98k0@=zki713n*-%9efel@o8u-o3z2n'
 #SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 #DEBUG = bool(os.environ.get("DEBUG", default=0))
 
 #ALLOWED_HOSTS = ['secure-citadel-03902.herokuapp.com, 127.0.0.1, 127.0.0.1:8000, localhost']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', '127.0.0.1:8000']
 #ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS","127.0.0.1").split(",")
 
 # Application definition
